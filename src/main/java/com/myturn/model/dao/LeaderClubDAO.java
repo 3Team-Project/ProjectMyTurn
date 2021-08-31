@@ -1,5 +1,14 @@
 package com.myturn.model.dao;
 
-public interface LeaderClubDAO {
+import com.myturn.model.vo.ClubVO;
 
+public interface LeaderClubDAO {
+	
+	public String leaderUpdateClub(ClubVO cVo);
+	
+	public String leaderAdmitMember(ClubVO cVo);
+	
+	public String leaderDeleteMember();
+	
+	public String leaderDeleteClub();
 }
