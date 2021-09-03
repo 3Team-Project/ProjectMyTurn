@@ -13,6 +13,14 @@ public interface ClubDAO {
 	
 	public ClubVO searchClub(String clubId);
 	
-	public void deleteClub(String userId);
+	public void outClub(String userId);//모임 탈퇴
+	
+	public ClubVO viewClubShortIntro(ClubVO cVo); //간단한 모임 설명 보기
+	
+	public ClubVO viewClubDetailIntro(ClubVO cVo); //자세한 모임 설명 보기
+	
+	public boolean checkPw(String userId, String userPw);
+	
+	
 	
 }
