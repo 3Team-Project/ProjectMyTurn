@@ -1,1 +1,25 @@
-<?xml version="1.0" encoding="UTF-8"?>
+<?xml version="1.0" encoding="UTF-8"?>	
+
+  
+<mapper namespace="com.myturn.model.dao.ClubDAO" >
+	<insert id="createClub">
+		INSERT INTO CLUB VALUES(#{userId}, #{clubId}, #{clubName}, #{clubShortIntro}, #{clubDetailIntro}, #{clubKeyword},#{categoryCode})
+	</insert>
+	
+	<insert id="joinClub">
+		INSERT INTO CLUBMEMBER VALUES(#{userId}, #{clubId},#{selfIntroduce})
+	</insert>
+	
+	<select id="viewClubShortIntro">
+		select clubShortIntro from CLUB	
+	</select>
+	
+	<select id="viewClubDetailIntro">
+		select clubDetailIntro from CLUB
+	</select>
+	
+	<delete id="outClub">
+		delete from CLUB
+		where userId = #{userId}
+	</delete>
+</mapper>
