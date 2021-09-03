@@ -1,0 +1,16 @@
+server:
+  port: 9091
+  
+#JDBC Oracle Connection
+spring:
+  datasource:
+    driver-class-name: oracle.jdbc.driver.OracleDriver
+    url: jdbc:oracle:thin:@localhost:1521:xe
+    username: scott
+    password: tiger
+
+# MyBatis
+mybatis:
+  mapper-locations: classpath*:mappers/**/*Mapper.xml
+  type-aliases-package: com.bit.x3.model.vo
+  type-handlers-package: com.bit.x3.model.dao
