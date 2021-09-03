@@ -7,7 +7,7 @@
 	</insert>
 	
 	<insert id="joinClub">
-		INSERT INTO CLUBMEMBER VALUES(#{userId}, #{clubId},#{selfIntroduce})
+		INSERT INTO CLUBMEMBER VALUES(#{userId}, #{selfIntroduce})
 	</insert>
 	
 	<select id="viewClubShortIntro">
