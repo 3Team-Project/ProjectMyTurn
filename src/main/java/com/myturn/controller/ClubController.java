@@ -3,6 +3,7 @@ package com.myturn.controller;
 import java.util.logging.Logger;
 
 import org.mybatis.logging.LoggerFactory;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.ModelAttribute;
@@ -15,12 +16,13 @@ import com.myturn.model.dao.ClubDAO;
 import com.myturn.model.vo.ClubVO;
 
 @Controller
+@RequestMapping("/club")
 public class ClubController {
 	
-	
+	@Autowired
 	ClubDAO clubDao;
 	
-	@RequestMapping("club/createClub")
+	@RequestMapping("createClub")
 	public void newClub() {
 	
 	}
@@ -33,24 +35,25 @@ public class ClubController {
 		return "redirect:/board/index";
 	}
 	
-	@RequestMapping("club/joinClub")
+	@RequestMapping("joinClub")
 	public void clubJoin() {
 		
 		clubDao.joinClub();
 	}
 	
-	@RequestMapping("club/shortIntro")
+	@RequestMapping("shortIntro")
 	public void clubViewShortIntro(ClubVO cVo) {
 		
 		clubDao.viewClubShortIntro(cVo);
 	}
 	
-	@RequestMapping("club/detailIntro")
+	@RequestMapping("detailIntro")
 	public void clubViewDetailIntro(ClubVO cVo) {
 		
 		clubDao.viewClubDetailIntro(cVo);
 	}
 	
+	@PostMapping
 	public String clubOut(@RequestParam String userId, @RequestParam String userPw, Model model) {
 		boolean result = clubDao.checkPw(userId, userPw);
 		
