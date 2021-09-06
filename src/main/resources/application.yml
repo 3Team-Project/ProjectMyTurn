@@ -11,6 +11,6 @@ spring:
 
 # MyBatis
 mybatis:
-  mapper-locations: classpath*:mapper/**/*Mapper.xml
+  mapper-locations: classpath*:mappers/**/*Mapper.xml
   type-aliases-package: com.myturn.model.vo
   type-handlers-package: com.myturn.model.dao
