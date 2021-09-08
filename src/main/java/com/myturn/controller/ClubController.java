@@ -16,16 +16,28 @@ import com.myturn.model.dao.ClubDAO;
 import com.myturn.model.vo.ClubVO;
 
 @Controller
-@RequestMapping("/club")
+@RequestMapping
 public class ClubController {
 	
 	@Autowired
 	ClubDAO clubDao;
 	
-	@RequestMapping("createClub")
-	public void newClub() {
-	
+	@RequestMapping("/")
+	public String newClub() {
+		return "club/createClub";
 	}
+	
+//	@RequestMapping("index")
+//	public String index() {
+//		return "club/index";
+//	}
+	
+//	@RequestMapping(value="/")
+//	public String index() {
+//		return "viewTest";
+//	}
+	
+
 	
 	@RequestMapping
 	public String clubCreate(@ModelAttribute ClubVO cVo) {
